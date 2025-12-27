@@ -61,10 +61,6 @@ const TeamSection = () => {
               Legends of the <span className="text-zinc-500">Bush</span>
             </h2>
           </div>
-          
-          <a href="#join" className="group flex items-center gap-2 text-zinc-500 font-bold uppercase text-xs tracking-widest border-b-2 border-transparent hover:text-[#FFC107] hover:border-[#FFC107] transition-all pb-1 mb-2 md:mb-0">
-            Join Our Team <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
-          </a>
         </div>
 
         {/* Team Grid with Staggered Child Animations */}

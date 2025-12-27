@@ -75,10 +75,7 @@ const ImpactSection = () => {
             ))}
           </div>
 
-          <button className="group relative overflow-hidden border-2 border-[#FFC107] text-[#FFC107] px-12 py-4 uppercase font-black italic text-sm tracking-[0.2em] transition-all duration-500 hover:text-black">
-            <span className="relative z-10">Read Our Impact Report</span>
-            <div className="absolute inset-0 bg-[#FFC107] transition-transform duration-500 translate-y-full group-hover:translate-y-0"></div>
-          </button>
+
         </div>
 
         {/* Right Overlapping Images Column */}

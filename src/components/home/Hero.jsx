@@ -30,12 +30,12 @@ const Hero = () => {
         />
       </div>
 
-      {/* ================= WHATSAPP FLOAT (FIXED) ================= */}
+      {/* ================= WHATSAPP FLOAT (FIXED) - Bottom Left on all screens ================= */}
       <motion.a
         href="https://wa.me/94717402688"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed top-10 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-xl"
+        className="fixed bottom-6 left-6 z-50 bg-[#25D366] p-4 rounded-full shadow-xl"
         animate={{
           y: [0, -8, 0],
           boxShadow: [

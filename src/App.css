@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888888;
 }
+
+body.navbar-scrolled {
+  padding-top: 80px; /* Height of the fixed navbar */
+}
+
+@media (max-width: 1024px) {
+  body.navbar-scrolled {
+    padding-top: 70px; /* Adjust for smaller screens */
+  }
+}

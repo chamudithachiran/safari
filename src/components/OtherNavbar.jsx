@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   FaFacebookF,
@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import { HiPhone } from "react-icons/hi";
+import { HiPhone, HiMenu } from "react-icons/hi";
 import { FiUser } from "react-icons/fi";
 
 const OtherNavbar = () => {
@@ -16,6 +16,40 @@ const OtherNavbar = () => {
   const location = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down
+        setScrolled(true);
+        document.body.classList.add('navbar-scrolled');
+      } else if (window.scrollY < lastScrollY || window.scrollY <= 100) {
+        // Scrolling up or at top
+        setScrolled(false);
+        document.body.classList.remove('navbar-scrolled');
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    // Initial check for scroll position on component mount
+    if (typeof window !== "undefined") {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+        document.body.classList.add('navbar-scrolled');
+      }
+      setLastScrollY(window.scrollY);
+    }
+    
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+      document.body.classList.remove('navbar-scrolled');
+    };
+  }, []);
 
   const isActive = (path) => location.pathname === path;
 
@@ -29,15 +63,15 @@ const OtherNavbar = () => {
   return (
     <header className="w-full z-[10000]">
       {/* ---------------- TOP BLACK BAR ---------------- */}
-      <div className="bg-[#1f1f1f] text-white text-sm">
+      <div className={`bg-[#1f1f1f] text-white text-sm transition-all duration-300 ${scrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 h-auto'}`}>
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
           {/* Left */}
-          <div className="flex items-center gap-2 text-[#FFC107]">
+          <a href="mailto:nalinsigiri@gmail.com" className="flex items-center gap-2 text-[#FFC107] hover:text-[#FFC107] transition-colors">
             <MdEmail size={18} />
             <span className="text-white">
               nalinsigiri@gmail.com
             </span>
-          </div>
+          </a>
 
           {/* Center */}
           <div className="hidden md:block text-center">
@@ -54,22 +88,32 @@ const OtherNavbar = () => {
 
           {/* Right social */}
           <div className="flex items-center gap-3">
-            <FaFacebookF className="hover:text-[#FFC107] cursor-pointer" />
-            <IoLogoWhatsapp className="hover:text-[#FFC107] cursor-pointer" />
-            <FaInstagram className="hover:text-[#FFC107] cursor-pointer" />
-            <FaYoutube className="hover:text-[#FFC107] cursor-pointer" />
-            <FaTiktok className="hover:text-[#FFC107] cursor-pointer" />
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] cursor-pointer">
+              <FaFacebookF />
+            </a>
+            <a href="https://wa.me/94717402688" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] cursor-pointer">
+              <IoLogoWhatsapp />
+            </a>
+            <a href="https://www.instagram.com/safartalesbypodi?igsh=OW8zNWdzcDQ3Mmhx&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] cursor-pointer">
+              <FaInstagram />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] cursor-pointer">
+              <FaYoutube />
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] cursor-pointer">
+              <FaTiktok />
+            </a>
           </div>
         </div>
       </div>
 
       {/* ---------------- MAIN NAVBAR ---------------- */}
-      <div className="bg-black/20 backdrop-blur-md shadow-md border-b border-white/10 relative z-[10000]">
+      <div className={`${scrolled ? 'bg-black/20 backdrop-blur-md border-b border-white/10 fixed top-0 left-0 w-full z-[10000]' : isActive('/') ? 'bg-transparent relative z-[10000]' : 'bg-black/20 backdrop-blur-md border-b border-white/10 relative z-[10000]'} shadow-md`}>
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <div
             onClick={() => handleNav("/")}
-            className="text-2xl font-black italic cursor-pointer text-white"
+            className="text-xl sm:text-2xl font-black italic cursor-pointer text-white truncate max-w-[200px] sm:max-w-none"
           >
             <span className="text-[#FFC107]">Safari Tales</span> By Podi
           </div>
@@ -155,23 +199,33 @@ const OtherNavbar = () => {
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-6">
+            <a href="https://wa.me/94717402688" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-[#FFC107] transition-colors">
+              <IoLogoWhatsapp />
+            </a>
             <FiUser size={22} />
 
-            <div className="flex items-center gap-2 text-[#FFC107] font-semibold">
+            <a href="https://wa.me/94717402688" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#FFC107] font-semibold hover:text-[#FFC107] transition-colors">
               <HiPhone size={22} />
               <div className="text-right leading-tight">
                 <p className="text-xs text-white">To More Inquiry</p>
                 <p className="text-sm text-white">+94 71 740 2688</p>
               </div>
-            </div>
+            </a>
+          </div>
+          
+          {/* Mobile Right side with WhatsApp */}
+          <div className="lg:hidden flex items-center gap-4">
+            <a href="https://wa.me/94717402688" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-[#FFC107] transition-colors">
+              <IoLogoWhatsapp />
+            </a>
           </div>
 
           {/* Mobile toggle */}
           <div
-            className="lg:hidden cursor-pointer"
+            className="lg:hidden cursor-pointer text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            ☰
+            <HiMenu size={24} />
           </div>
         </div>
 
