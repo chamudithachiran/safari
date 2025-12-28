@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import OtherNavbar from '../components/OtherNavbar'
 import BlogHomeSection from '../components/Blog/BlogHomeSection'
 import DetailsSection from '../components/Blog/DetailsSection'
 
@@ -60,16 +60,7 @@ function BlogPage() {
     return (
         <div className="BlogPage w-full">
             <section>
-                <Navbar
-                    logo={null}
-                    logoAlt=""
-                    items={navbarItems}
-                    baseColor="#1a1a1a"
-                    menuColor="#fff"
-                    buttonBgColor="#ffd700"
-                    buttonTextColor="#000"
-                    ease="power3.out"
-                />
+                <OtherNavbar />
                 
             </section>
             <BlogHomeSection />

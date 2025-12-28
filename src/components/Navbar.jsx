@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 
@@ -26,6 +26,7 @@ const Navbar = ({
 
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef(null);
   const dropdownRef = useRef(null);
   const tlRef = useRef(null);
@@ -63,6 +64,25 @@ const Navbar = ({
     });
   }, []);
 
+  /* ---------------- SCROLL EFFECTS ---------------- */
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const toggleMenu = () => {
     if (!tlRef.current) return;
 
@@ -84,16 +104,18 @@ const Navbar = ({
   };
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[800px] z-[9999]">
+    <div 
+      className={`fixed left-1/2 -translate-x-1/2 w-[96%] max-w-[1200px] z-[99999] transition-all duration-300 ${isScrolled ? 'top-1' : 'top-3'}`}
+    >
       <nav
         ref={navRef}
-        className="rounded-xl shadow-2xl backdrop-blur-md border border-white/10 overflow-visible"
-        style={{ backgroundColor: baseColor + "DD" }}
+        className="rounded-3xl shadow-2xl backdrop-blur-xl border border-white/20 overflow-visible shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+        style={{ backgroundColor: baseColor + "80" }}
       >
         {/* ---------------- TOP BAR ---------------- */}
-        <div className="h-[60px] flex items-center justify-between px-6 relative">
+        <div className={`${isScrolled ? 'h-[55px]' : 'h-[70px]'} flex items-center justify-between px-8 relative transition-all duration-300`}>
           <div
-            className="text-xl font-black italic text-white cursor-pointer"
+            className={`${isScrolled ? 'text-xl' : 'text-2xl'} font-black italic text-white cursor-pointer transition-all duration-300`}
             onClick={() => handleNavigate("/")}
           >
             SAFARI TALES <span className="text-[#FFC107]">BY PODI</span>
@@ -107,7 +129,7 @@ const Navbar = ({
                   <button
                     id="services-btn"
                     onClick={() => setIsServicesOpen((prev) => !prev)}
-                    className="uppercase font-bold text-[10px] tracking-[0.2em] flex items-center gap-1"
+                    className={`uppercase font-bold ${isScrolled ? 'text-[10px]' : 'text-[11px]'} tracking-[0.2em] flex items-center gap-1 px-4 py-2 rounded-full transition-all duration-300`}
                     style={{ color: menuColor }}
                   >
                     Services
@@ -123,9 +145,9 @@ const Navbar = ({
                   {isServicesOpen && (
                     <div
                       ref={dropdownRef}
-                      className="absolute top-full left-0 mt-3 rounded-lg shadow-2xl border border-white/10 min-w-[180px] z-[10000]"
+                      className="absolute top-full left-0 mt-3 rounded-2xl shadow-2xl border border-white/20 min-w-[180px] z-[10000] backdrop-blur-xl"
                       style={{
-                        backgroundColor: baseColor + "F0",
+                        backgroundColor: baseColor + "80",
                         pointerEvents: "auto",
                       }}
                     >
@@ -133,7 +155,7 @@ const Navbar = ({
                         <button
                           key={idx}
                           onClick={() => handleNavigate(s.href)}
-                          className="w-full text-left px-4 py-3 uppercase font-bold text-[10px] hover:bg-[#FFC107] hover:text-black transition"
+                          className="w-full text-left px-4 py-3 uppercase font-bold text-[11px] hover:bg-[#FFC107] hover:text-black transition rounded-lg"
                           style={{ color: menuColor }}
                         >
                           {s.label}
@@ -146,7 +168,7 @@ const Navbar = ({
                 <button
                   key={i}
                   onClick={() => handleNavigate(item.href)}
-                  className="uppercase font-bold text-[10px] tracking-[0.2em] hover:text-[#FFC107]"
+                  className={`uppercase font-bold ${isScrolled ? 'text-[10px]' : 'text-[11px]'} tracking-[0.2em] hover:text-[#FFC107] px-4 py-2 rounded-full transition-all duration-300`}
                   style={{ color: menuColor }}
                 >
                   {item.label}
@@ -156,22 +178,22 @@ const Navbar = ({
           </div>
 
           {/* ---------------- MOBILE HAMBURGER ---------------- */}
-          <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
-            <div className="w-6 h-0.5 bg-white mb-1" />
-            <div className="w-6 h-0.5 bg-white mb-1" />
-            <div className="w-6 h-0.5 bg-white" />
+          <div className="md:hidden cursor-pointer p-2" onClick={toggleMenu}>
+            <div className="w-7 h-0.5 bg-white mb-1.5" />
+            <div className="w-7 h-0.5 bg-white mb-1.5" />
+            <div className="w-7 h-0.5 bg-white" />
           </div>
         </div>
 
         {/* ---------------- MOBILE MENU ---------------- */}
         {isExpanded && (
-          <div className="md:hidden p-4 flex flex-col gap-2">
+          <div className="md:hidden p-6 rounded-2xl flex flex-col gap-2 mt-2 backdrop-blur-xl" style={{ backgroundColor: baseColor + "80", border: "1px solid rgba(255,255,255,0.2)" }}>
             {navItems.map((item, i) =>
               item.hasDropdown ? (
                 <div key={i}>
                   <button
                     onClick={() => setIsServicesOpen((prev) => !prev)}
-                    className="w-full p-3 font-bold uppercase italic flex justify-between"
+                    className="w-full p-3 font-bold uppercase italic flex justify-between rounded-lg bg-white/5"
                     style={{ color: menuColor }}
                   >
                     Services <span>▼</span>
@@ -183,7 +205,7 @@ const Navbar = ({
                         <button
                           key={idx}
                           onClick={() => handleNavigate(s.href)}
-                          className="p-3 text-left font-bold uppercase italic"
+                          className="p-3 text-left font-bold uppercase italic rounded-lg bg-white/5 mt-1"
                           style={{ color: menuColor }}
                         >
                           {s.label}
@@ -196,7 +218,7 @@ const Navbar = ({
                 <button
                   key={i}
                   onClick={() => handleNavigate(item.href)}
-                  className="p-3 font-bold uppercase italic text-left"
+                  className="p-3 font-bold uppercase italic text-left rounded-lg bg-white/5 mt-1"
                   style={{ color: menuColor }}
                 >
                   {item.label}

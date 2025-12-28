@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import elephantImg from '../../assets/images/elephant.jpg'; // Path to your elephant image
 
 const ExpeditionDetail = () => {
@@ -73,9 +74,11 @@ const ExpeditionDetail = () => {
           </ul>
 
           {/* Action Button */}
-          <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 border-2 border-zinc-900 text-zinc-900 font-black uppercase italic tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm hover:bg-zinc-900 hover:text-white transition-all duration-300 rounded-lg shadow-lg active:scale-95">
-            Book Now
-          </button>
+          <Link to="/contact">
+            <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 border-2 border-zinc-900 text-zinc-900 font-black uppercase italic tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm hover:bg-zinc-900 hover:text-white transition-all duration-300 rounded-lg shadow-lg active:scale-95">
+              Book Now
+            </button>
+          </Link>
         </motion.div>
 
       </div>

@@ -2,8 +2,9 @@ import React from 'react'
 import Hero from '../components/home/Hero'
 import AboutUs from '../components/home/aboutsecion'
 import Services from '../components/home/servicessection'
-import Gallery from '../components/home/gallery'
+// import Gallery from '../components/home/gallery'
 import Testimonialsection from '../components/home/Testimonialsection'
+import Gallery from '../components/gallery/GallerySection'
 import ContactSection from '../components/home/contactsection'
 
 function HomePage() {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import OtherNavbar from '../components/OtherNavbar';
 import ServicesSection from '../components/Services/ServicesSection';
 import ExpeditionDetail from '../components/Services/ExpeditionDetail';
 import MorningEveningRaid from '../components/Services/MorningEveningRaid';
@@ -14,11 +14,7 @@ function ServicesPage() {
 
     return (
         <div className="ServicesPage w-full min-h-screen bg-zinc-950">
-            <Navbar 
-                baseColor="#050505"
-                buttonBgColor="#FFC107"
-                buttonTextColor="#000"
-            />
+            <OtherNavbar />
             {/* Added pt-24 to ensure ServicesSection starts below the Navbar */}
             <main className="pt-24 bg-white"> 
                 <ServicesSection />

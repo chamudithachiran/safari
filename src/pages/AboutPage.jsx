@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import OtherNavbar from '../components/OtherNavbar'
 import AboutHero from '../components/about/AboutHero'
 import OurStory from '../components/about/OurStory'
 import Philosophy from '../components/about/Philosophy'
@@ -61,16 +61,7 @@ function AboutPage() {
     return (
         <div className="AboutPage w-full">
             <section>
-                <Navbar
-                    logo={null}
-                    logoAlt=""
-                    items={navbarItems}
-                    baseColor="#1a1a1a"
-                    menuColor="#fff"
-                    buttonBgColor="#ffd700"
-                    buttonTextColor="#000"
-                    ease="power3.out"
-                />
+                <OtherNavbar />
                 
             </section>
             <AboutHero />

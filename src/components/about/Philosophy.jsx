@@ -22,18 +22,18 @@ const Philosophy = () => {
   const cards = [
     {
       icon: <Leaf className="w-8 h-8" />,
-      title: "Conservation First",
-      desc: "We operate with a strict 'no-disturbance' policy. Our guides maintain safe distances, ensuring wildlife behaves naturally."
+      title: "Local Expertise",
+      desc: "As a local safari provider from the Pidurangala–Sigiriya area, Podi brings deep knowledge of animal behavior, park routes, and seasonal movements — giving guests the best chance to witness elephants, birds, and wildlife in their natural habitat."
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Community Empowered",
-      desc: "We hire locally from tribal villages. By providing fair wages and training, we turn communities into protectors."
+      title: "Personal Approach",
+      desc: "What sets us apart is our personal approach. We carefully design each safari to help guests truly connect with nature — not just observe it."
     },
     {
       icon: <GraduationCap className="w-8 h-8" />,
-      title: "Expert Knowledge",
-      desc: "Our guides aren't just drivers; they are certified naturalists. They identify calls, track footprints, and explain species behavior."
+      title: "Professional Service",
+      desc: "Whether you're seeking a peaceful nature experience or a thrilling wildlife adventure, Safari Tales by Podi promises professional service, ethical safaris, and memories that last a lifetime."
     }
   ];
 

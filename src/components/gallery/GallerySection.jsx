@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-// Import your gallery photos from src/assets/images
+// Import your gallery photos from src/assets/images/about
 // Add your photo imports here - example format:
-// import gallery1 from '../../assets/images/gallery1.jpg';
-// import gallery2 from '../../assets/images/gallery2.jpg';
-// import gallery3 from '../../assets/images/gallery3.jpg';
-// import gallery4 from '../../assets/images/gallery4.jpg';
-// import gallery5 from '../../assets/images/gallery5.jpg';
-// import gallery6 from '../../assets/images/gallery6.jpg';
-// import gallery7 from '../../assets/images/gallery7.jpg';
-// import gallery8 from '../../assets/images/gallery8.jpg';
-// import gallery9 from '../../assets/images/gallery9.jpg';
-// import gallery10 from '../../assets/images/gallery10.jpg';
-// import gallery11 from '../../assets/images/gallery11.jpg';
-// import gallery12 from '../../assets/images/gallery12.jpg';
+// import gallery1 from '../../assets/images/about/gallery1.jpg';
+// import gallery2 from '../../assets/images/about/gallery2.jpg';
+// import gallery3 from '../../assets/images/about/gallery3.jpg';
+// import gallery4 from '../../assets/images/about/gallery4.jpg';
+// import gallery5 from '../../assets/images/about/gallery5.jpg';
+// import gallery6 from '../../assets/images/about/gallery6.jpg';
+// import gallery7 from '../../assets/images/about/gallery7.jpg';
+// import gallery8 from '../../assets/images/about/gallery8.jpg';
+// import gallery9 from '../../assets/images/about/gallery9.jpg';
+// import gallery10 from '../../assets/images/about/gallery10.jpg';
+// import gallery11 from '../../assets/images/about/gallery11.jpg';
+// import gallery12 from '../../assets/images/about/gallery12.jpg';
 
 // Placeholder imports for now - replace these with your actual photo imports
 import img1 from '../../assets/images/1.jpg';
@@ -27,7 +27,28 @@ import imgTDetail from '../../assets/images/t-detail.jpg';
 import imgTuos from '../../assets/images/tuos.jpg';
 import imgTesti from '../../assets/images/testi.jpg';
 
-const Gallery = () => {
+// Gallery photos from src/assets/images/about
+import gallery1 from '../../assets/images/about/gallery (1).jpeg';
+import gallery2 from '../../assets/images/about/gallery (2).jpeg';
+import gallery3 from '../../assets/images/about/gallery (3).jpeg';
+import gallery4 from '../../assets/images/about/gallery (4).jpeg';
+import gallery5 from '../../assets/images/about/gallery (5).jpeg';
+import gallery6 from '../../assets/images/about/gallery (6).jpeg';
+import gallery7 from '../../assets/images/about/gallery (7).jpeg';
+import gallery8 from '../../assets/images/about/gallery (8).jpeg';
+import gallery9 from '../../assets/images/about/gallery (9).jpeg';
+import gallery10 from '../../assets/images/about/gallery (10).jpeg';
+import gallery11 from '../../assets/images/about/gallery (11).jpeg';
+import gallery12 from '../../assets/images/about/gallery (12).jpeg';
+import gallery13 from '../../assets/images/about/gallery (13).jpeg';
+import gallery14 from '../../assets/images/about/gallery (14).jpeg';
+import gallery15 from '../../assets/images/about/gallery (15).jpeg';
+import gallery16 from '../../assets/images/about/gallery (16).jpeg';
+import gallery17 from '../../assets/images/about/gallery (17).jpeg';
+import gallery18 from '../../assets/images/about/gallery (18).jpeg';
+import gallery19 from '../../assets/images/about/gallery (19).jpeg';
+
+const GallerySection = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -40,20 +61,27 @@ const Gallery = () => {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  // Replace this images array with your actual photos when you import them
+  // Gallery images from src/assets/images/about
   const images = [
-    { id: 1, src: img1, colSpan: 1, rowSpan: 2 },
-    { id: 2, src: img2, colSpan: 1, rowSpan: 1 },
-    { id: 3, src: img3, colSpan: 1, rowSpan: 1 },
-    { id: 4, src: img4, colSpan: 1, rowSpan: 2 },
-    { id: 5, src: imgAboutUs, colSpan: 2, rowSpan: 1 },
-    { id: 6, src: imgHome, colSpan: 1, rowSpan: 1 },
-    { id: 7, src: imgGallery, colSpan: 1, rowSpan: 1 },
-    { id: 8, src: imgBlog, colSpan: 1, rowSpan: 2 },
-    { id: 9, src: imgTDetail, colSpan: 1, rowSpan: 1 },
-    { id: 10, src: imgTuos, colSpan: 2, rowSpan: 1 },
-    { id: 11, src: imgTesti, colSpan: 1, rowSpan: 1 },
-    { id: 12, src: img1, colSpan: 1, rowSpan: 1 },
+    { id: 1, src: gallery1 },
+    { id: 2, src: gallery2 },
+    { id: 3, src: gallery3 },
+    { id: 4, src: gallery4 },
+    { id: 5, src: gallery5 },
+    { id: 6, src: gallery6 },
+    { id: 7, src: gallery7 },
+    { id: 8, src: gallery8 },
+    { id: 9, src: gallery9 },
+    { id: 10, src: gallery10 },
+    { id: 11, src: gallery11 },
+    { id: 12, src: gallery12 },
+    { id: 13, src: gallery13 },
+    { id: 14, src: gallery14 },
+    { id: 15, src: gallery15 },
+    { id: 16, src: gallery16 },
+    { id: 17, src: gallery17 },
+    { id: 18, src: gallery18 },
+    { id: 19, src: gallery19 },
   ];
 
   const openLightbox = (image) => {
@@ -97,12 +125,9 @@ const Gallery = () => {
           <div className="w-24 h-1 bg-[#FFC107] mx-auto"></div>
         </div>
 
-        {/* GALLERY GRID */}
+        {/* GALLERY MASONRY */}
         <div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3"
-          style={{
-            gridAutoRows: isDesktop ? '200px' : '150px',
-          }}
+          className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4 sm:gap-5 space-y-4"
         >
           {images.map((img, index) => (
             <div
@@ -110,26 +135,15 @@ const Gallery = () => {
               data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay={index * 100}
-              className="relative overflow-hidden rounded-lg bg-[#4a1e4a] group cursor-pointer border border-white/20 aspect-square"
-              style={{
-                gridColumn: isDesktop ? `span ${img.colSpan}` : 'span 1',
-                gridRow: isDesktop ? `span ${img.rowSpan}` : 'span 1',
-              }}
+              className="relative overflow-hidden rounded-xl bg-[#4a1e4a] group cursor-pointer border border-white/10 shadow-lg break-inside-avoid mb-4"
               onClick={() => openLightbox(img)}
             >
               <img
                 src={img.src}
                 alt={`Gallery image ${img.id}`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <div className="text-white text-sm font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  Image {img.id}
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div className="text-white text-2xl">+</div>
-              </div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
             </div>
           ))}
         </div>
@@ -179,4 +193,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GallerySection;

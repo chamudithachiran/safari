@@ -1,8 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ContactHero = () => {
+  // State for form data
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Format the message for WhatsApp
+    const whatsappNumber = '94717402688'; // Format without + and spaces
+    const message = `*New Contact Form Submission*
+
+Name: ${formData.name}
+Email: ${formData.email}
+Message: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    
+    // Reset form after submission
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
+  };
+
   // Animations
   const container = {
     hidden: { opacity: 0 },
@@ -109,30 +149,39 @@ const ContactHero = () => {
             whileHover={{ y: -8 }}
             className="relative bg-zinc-900/60 backdrop-blur-xl border border-zinc-800 p-10 shadow-2xl"
           >
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
 
-              {[{ t: 'text', p: 'Your Name' }, { t: 'email', p: 'Email Address' }].map((f, i) => (
+              {[{ t: 'text', p: 'Your Name', n: 'name' }, { t: 'email', p: 'Email Address', n: 'email' }].map((f, i) => (
                 <motion.input
-                  key={i}
+                  key={f.n}
                   type={f.t}
+                  name={f.n}
                   placeholder={f.p}
+                  value={formData[f.n]}
+                  onChange={handleChange}
                   variants={fadeInUp}
                   whileFocus={{ scale: 1.02 }}
                   className="w-full bg-transparent border-b border-zinc-700 pb-3 text-white placeholder:text-zinc-500 focus:border-[#FFC107] outline-none transition"
                   style={{ fontFamily: 'Inter, sans-serif' }}
+                  required
                 />
               ))}
 
               <motion.textarea
                 rows={4}
+                name="message"
                 placeholder="Your Inquiry"
+                value={formData.message}
+                onChange={handleChange}
                 variants={fadeInUp}
                 whileFocus={{ scale: 1.02 }}
                 className="w-full bg-transparent border-b border-zinc-700 pb-3 text-white placeholder:text-zinc-500 focus:border-[#FFC107] outline-none transition resize-none"
                 style={{ fontFamily: 'Inter, sans-serif' }}
+                required
               />
 
               <motion.button
+                type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full mt-6 py-4 bg-[#FFC107] text-black font-bold uppercase tracking-widest flex items-center justify-center gap-3 overflow-hidden relative"

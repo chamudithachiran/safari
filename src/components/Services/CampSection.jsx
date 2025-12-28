@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // ✅ FIXED PATH (NO /src)
 import tentImg from "../../assets/images/bush-camp-tent.jpg";
@@ -72,9 +73,11 @@ const CampSection = () => {
             ))}
           </ul>
 
-          <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 border-2 border-zinc-900 text-zinc-900 font-black uppercase tracking-widest text-[10px] sm:text-xs hover:bg-zinc-900 hover:text-white transition-all rounded-lg shadow-md">
-            BOOK NOW
-          </button>
+          <Link to="/contact">
+            <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 border-2 border-zinc-900 text-zinc-900 font-black uppercase tracking-widest text-[10px] sm:text-xs hover:bg-zinc-900 hover:text-white transition-all rounded-lg shadow-md">
+              BOOK NOW
+            </button>
+          </Link>
         </div>
 
       </div>

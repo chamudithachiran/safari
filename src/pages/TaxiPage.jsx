@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import OtherNavbar from "../components/OtherNavbar";
 import TaxiHomeSection from "../components/Taxi/TaxiHomeSection";
 import TaxiServiceSection from "../components/Taxi/TaxiServiceSection";
 
@@ -45,16 +45,7 @@ const TaxiPage = () => {
 
   return (
     <div className="TaxiPage w-full">
-      <Navbar
-        logo={null}
-        logoAlt=""
-        items={navbarItems}
-        baseColor="#1a1a1a"
-        menuColor="#fff"
-        buttonBgColor="#ffd700"
-        buttonTextColor="#000"
-        ease="power3.out"
-      />
+      <OtherNavbar />
 
       <TaxiHomeSection />
       <TaxiServiceSection />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import luxuryLodge from '../../assets/images/luxury-lodge.jpg';
 
 const AboutHero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,13 +17,13 @@ const AboutHero = () => {
         className={`absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 ease-out ${
           isLoaded ? 'scale-110' : 'scale-100'
         }`}
-        style={{ backgroundImage: "url('/assets/abhero.jpg')" }}
+        style={{ backgroundImage: `url(${luxuryLodge})` }}
       >
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Bottom fade to transition into the next section */}
-        <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 bg-linear-to-t  to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 bg-gradient-to-t from-black/40 to-transparent"></div>
       </div>
 
       {/* Content Container */}
@@ -42,15 +43,14 @@ const AboutHero = () => {
           }`}
           style={{ fontFamily: "'Permanent Marker', cursive" }}
         >
-          Who We  <span className="text-black" >Are</span>
+          About <span className="text-[#FFC107]" >Safari Tales</span>
         </h1>
 
         {/* Description - Rises up slowly */}
-        <p className={`text-white/80 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mt-6 sm:mt-8 leading-relaxed transition-all duration-1000 delay-700 ${
+        <p className={`text-white/80 text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto mt-6 sm:mt-8 leading-relaxed transition-all duration-1000 delay-700 ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          From the dense jungles of Yala to the elephant gatherings of Minneriya,
-          we are storytellers of the wild.
+          Safari Tales by Podi is a trusted wildlife safari experience based in Pidurangala, Sigiriya, at the heart of Sri Lanka’s most iconic wildlife region. Born from a deep passion for nature and years of hands-on experience, Safari Tales by Podi was created to offer visitors an authentic, safe, and unforgettable safari journey through Sri Lanka’s rich wilderness.
         </p>
 
         {/* Animated Scroll Indicator Dot */}

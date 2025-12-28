@@ -1,4 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import galleryImage from '../../assets/images/about/gallery (1).jpeg';
+
+// CountUp component for animated counting
+const CountUp = ({ value }) => {
+  const ref = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Extract the numeric part and suffix from the value
+  const numValue = parseFloat(value.replace(/[^\d.]/g, ''));
+  const suffix = value.replace(/[\d.]/g, '');
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || hasAnimated) return;
+
+    const startCounting = () => {
+      let start = 0;
+      const duration = 2000; // 2 seconds
+      const increment = numValue / (duration / 16); // 60fps approx
+      const suffix = value.replace(/[\d.]/g, '');
+
+      const updateCount = () => {
+        start += increment;
+        if (start >= numValue) {
+          element.textContent = value; 
+          setHasAnimated(true);
+        } else {
+          element.textContent = Math.floor(start) + suffix;
+          requestAnimationFrame(updateCount);
+        }
+      };
+
+      updateCount();
+    };
+
+    // Start counting when component mounts
+    startCounting();
+  }, [numValue, value, hasAnimated]);
+
+  return <span ref={ref}>{value}</span>;
+};
 
 const OurStory = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,40 +92,42 @@ const OurStory = () => {
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}>
             <p>
-              It started with a single vintage Land Rover and a profound respect for nature. 
-              Founded by Rohan Perera, a local naturalist who grew up on the fringes of 
-              Yala National Park, our company was born out of a desire to share the magic 
-              of Sri Lanka's wildlife authentically.
+              Surrounded by world-renowned destinations such as Minneriya, Kaudulla, Hurulu Eco Park, and Sigiriya, we specialize in providing immersive wildlife safaris led by local expertise. Every safari is carefully designed to help guests truly connect with nature — not just observe it.
             </p>
             <p className="border-l-2 border-zinc-800 pl-4 md:pl-6 italic">
-              We believed that a safari shouldn't just be a drive through a park; it should 
-              be an immersive lesson in ecology. Over the last 15 years, we've grown from 
-              a one-man operation to a family of passionate guides.
+              At Safari Tales by Podi, guest safety is our highest priority. Our safari vehicles are well-maintained, fully equipped, and driven by experienced professionals who strictly follow park regulations and safety standards. From secure seating to responsible wildlife viewing practices, we ensure every ride is safe, comfortable, and stress-free for families, couples, and solo travelers alike.
             </p>
           </div>
 
           <div className={`h-px bg-zinc-800 my-6 md:my-10 transition-all duration-1000 delay-700 ${isVisible ? 'w-full' : 'w-0'}`}></div>
 
-          {/* Statistics Grid - Staggered reveal */}
+          {/* Statistics Grid - Staggered reveal with counting animation */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {[
-              { val: "15+", label: "Years Experience" },
-              { val: "10K+", label: "Happy Explorers" },
-              { val: "100%", label: "Local Guides" }
-            ].map((stat, i) => (
-              <div 
-                key={i} 
-                className={`transition-all duration-700 transform ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${800 + (i * 100)}ms` }}
-              >
-                <h4 className="text-[#FFC107] text-2xl sm:text-3xl md:text-4xl font-black italic mb-1">{stat.val}</h4>
-                <p className="text-[9px] sm:text-[10px] uppercase font-bold text-zinc-500 tracking-widest leading-tight">
-                  {stat.label.split(' ')[0]}<br/>{stat.label.split(' ')[1]}
-                </p>
-              </div>
-            ))}
+            {
+              [
+                { val: "15+", label: "Years Experience" },
+                { val: "10K+", label: "Happy Explorers" },
+                { val: "100%", label: "Local Guides" }
+              ].map((stat, i) => (
+                <div 
+                  key={i} 
+                  className={`transition-all duration-700 transform ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${800 + (i * 100)}ms` }}
+                >
+                  <h4 className="text-[#FFC107] text-2xl sm:text-3xl md:text-4xl font-black italic mb-1">
+                    {isVisible ? (
+                      <CountUp value={stat.val} />
+                    ) : (
+                      stat.val
+                    )}
+                  </h4>
+                  <p className="text-[9px] sm:text-[10px] uppercase font-bold text-zinc-500 tracking-widest leading-tight">
+                    {stat.label.split(' ')[0]}<br/>{stat.label.split(' ')[1]}
+                  </p>
+                </div>
+              ))}
           </div>
         </div>
 
@@ -97,14 +140,14 @@ const OurStory = () => {
             <div className="p-3 sm:p-4 bg-white shadow-[0_40px_80px_rgba(0,0,0,0.4)] rounded-sm transform group-hover:-rotate-2 transition-transform duration-500">
               <div className="overflow-hidden">
                 <img 
-                  src="../../src/assets/images/safari-jeep.jpg" 
-                  alt="Safari Jeep" 
+                  src={galleryImage} 
+                  alt="Safari Experience" 
                   className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
                 />
               </div>
               {/* Bottom space of polaroid for the 'handwritten' feel */}
               <div className="pt-4 sm:pt-6 pb-2">
-                 <p className="font-mono text-zinc-400 text-[9px] sm:text-[10px] uppercase">Expedition #01 // Yala National Park</p>
+                 <p className="font-mono text-zinc-400 text-[9px] sm:text-[10px] uppercase">Safari Experience // Sigiriya</p>
               </div>
             </div>
 

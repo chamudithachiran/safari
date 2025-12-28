@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // ✅ CORRECT IMAGE PATH (NO /src)
 import executiveCarImg from "../../assets/images/executive-car.jpg";
@@ -69,9 +70,11 @@ const TaxiServiceSection = () => {
           </ul>
 
           <div className="pt-6">
-            <button className="px-14 py-4 border-2 border-zinc-900 text-zinc-900 font-black uppercase tracking-widest text-xs hover:bg-zinc-900 hover:text-white transition-all rounded-lg shadow-md">
-              BOOK NOW
-            </button>
+            <Link to="/contact">
+              <button className="px-14 py-4 border-2 border-zinc-900 text-zinc-900 font-black uppercase tracking-widest text-xs hover:bg-zinc-900 hover:text-white transition-all rounded-lg shadow-md">
+                BOOK NOW
+              </button>
+            </Link>
           </div>
         </div>
 

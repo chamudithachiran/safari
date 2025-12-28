@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Gallery from '../components/home/gallery';
+import OtherNavbar from '../components/OtherNavbar';
+import GallerySection from '../components/gallery/GallerySection';
 
 function GalleryPage() {
     const navbarItems = [
@@ -57,18 +57,9 @@ function GalleryPage() {
     return (
         <div className="GalleryPage w-full">
             <section>
-                <Navbar
-                    logo={null}
-                    logoAlt=""
-                    items={navbarItems}
-                    baseColor="#1a1a1a"
-                    menuColor="#fff"
-                    buttonBgColor="#ffd700"
-                    buttonTextColor="#000"
-                    ease="power3.out"
-                />
+                <OtherNavbar />
             </section>
-            <Gallery />
+            <GallerySection />
         </div>
     );
 }

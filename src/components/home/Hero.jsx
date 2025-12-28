@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/public/assets/home-video.mp4"
+          src="/assets/home-video.mp4"
           autoPlay
           loop
           muted
@@ -35,7 +35,7 @@ const Hero = () => {
         href="https://wa.me/94717402688"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed top-24 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-xl"
+        className="fixed top-10 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-xl"
         animate={{
           y: [0, -8, 0],
           boxShadow: [
