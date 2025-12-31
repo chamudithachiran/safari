@@ -91,7 +91,7 @@ Time: ${formData.time}
           <motion.p variants={fadeInUp} className="mt-6 text-zinc-400 max-w-md">
             Have a question or project in mind? Send us a message and we’ll get back shortly.
             <span className="block text-[#FFC107]">
-            Kindly note that bookings must be placed a minimum of 3 hours prior to the required time</span>
+            Kindly note that bookings must be placed a minimum of 24 hours prior to the required time</span>
           </motion.p>
 
           <motion.div variants={container} className="mt-10 space-y-5">

@@ -76,7 +76,7 @@ Time: ${formData.time}
 
           <p className="text-zinc-400 text-lg mb-12 max-w-md leading-relaxed font-medium">
             Whether you're ready to book or just have a few questions about the wildlife, our trackers are standing by.
-            <span className="block text-[#FFC107]">Kindly note that bookings must be placed a minimum of 3 hours prior to the required time</span>
+            <span className="block text-[#FFC107]">Kindly note that bookings must be placed a minimum of 24 hours prior to the required time</span>
           </p>
 
           <div className="space-y-8">

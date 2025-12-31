@@ -19,7 +19,8 @@ const Footer = () => {
     { label: 'About Us', path: '/about' },
     { label: 'Services', path: '/services' },
     { label: 'Gallery', path: '/gallery' },
-    { label: 'Blog', path: '/blog' }
+    { label: 'Blog', path: '/blog' },
+    { label: 'Contact', path: '/contact' }
   ];
 
   return (
