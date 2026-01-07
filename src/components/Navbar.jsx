@@ -105,7 +105,7 @@ const Navbar = ({
 
   return (
     <div 
-      className={`fixed left-1/2 -translate-x-1/2 w-[96%] max-w-[1200px] z-[99999] transition-all duration-300 ${isScrolled ? 'top-1' : 'top-3'}`}
+      className={`fixed left-1/2 -translate-x-1/2 w-[96%] max-w-300 z-99999 transition-all duration-300 ${isScrolled ? 'top-1' : 'top-3'}`}
     >
       <nav
         ref={navRef}
@@ -113,7 +113,7 @@ const Navbar = ({
         style={{ backgroundColor: baseColor + "80" }}
       >
         {/* ---------------- TOP BAR ---------------- */}
-        <div className={`${isScrolled ? 'h-[55px]' : 'h-[70px]'} flex items-center justify-between px-8 relative transition-all duration-300`}>
+        <div className={`${isScrolled ? 'h-[55px]' : 'h-17.5'} flex items-center justify-between px-8 relative transition-all duration-300`}>
           <div
             className={`${isScrolled ? 'text-xl' : 'text-2xl'} font-black italic text-white cursor-pointer transition-all duration-300`}
             onClick={() => handleNavigate("/")}
