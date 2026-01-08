@@ -4,6 +4,7 @@ import AboutUs from '../components/home/aboutsecion'
 import Services from '../components/home/servicessection'
 // import Gallery from '../components/home/gallery'
 import Testimonialsection from '../components/home/Testimonialsection'
+import OurRoutes from '../components/home/OurRoutes'
 import Gallery from '../components/gallery/GallerySection'
 import ContactSection from '../components/home/contactsection'
 
@@ -28,6 +29,10 @@ function HomePage() {
                 <Testimonialsection />
             </section>
 
+            <section id="our-routes">
+                <OurRoutes />
+            </section>
+
             <section id="gallery">
                 <Gallery />
             </section>
@@ -35,6 +40,8 @@ function HomePage() {
             <section id="contact">
                 <ContactSection />
             </section>
+
+           
         </div>
     )
 }

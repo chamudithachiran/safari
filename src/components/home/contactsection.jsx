@@ -33,7 +33,7 @@ const ContactSection = () => {
 
     const message = `
 Name: ${formData.name}
-Drop Location: ${formData.location}
+PickUp Location: ${formData.location}
 Members Count: ${formData.members}
 Date: ${formData.date}
 Time: ${formData.time}
@@ -86,7 +86,7 @@ Time: ${formData.time}
               { icon: <Mail className="text-[#FFC107]" />, text: "nalinsigiri@gmail.com" }
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-6 group">
-                <div className="w-12 h-12 rounded-full border border-[#FFC107] flex items-center justify-center group-hover:bg-[#FFC107] transition">
+                <div className="w-12 h-12 rounded-full border border-[#FFC107] flex items-center justify-center group-hover:bg-[#ffffff] transition">
                   {item.icon}
                 </div>
                 <span className="text-zinc-300 font-bold uppercase tracking-widest text-sm group-hover:text-white">
@@ -121,7 +121,7 @@ Time: ${formData.time}
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 className="w-full bg-transparent border-b border-zinc-700 py-3 text-white focus:outline-none focus:border-[#FFC107]"
-                placeholder="Drop Location"
+                placeholder="PickUp Location"
               />
             </div>
 

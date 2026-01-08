@@ -146,7 +146,7 @@ Time: ${formData.time}
 
               <motion.input
                 type="text"
-                placeholder="Drop Location"
+                placeholder="PickUp Location"
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 className="w-full bg-transparent border-b border-zinc-700 pb-3 text-white placeholder:text-zinc-500 focus:border-[#FFC107] outline-none"
