@@ -141,13 +141,7 @@ const TaxiCarSection = () => {
           </motion.div>
 
           {/* PRICE BADGE */}
-          <motion.div
-            variants={badgePulse}
-            animate="animate"
-            className="absolute bottom-6 right-6 bg-[#1a1a1a] text-[#FFC107] px-6 py-3 rounded-xl font-black text-sm shadow-xl"
-          >
-            From $30 / Ride
-          </motion.div>
+          
         </motion.div>
 
       </div>

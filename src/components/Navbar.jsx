@@ -109,11 +109,11 @@ const Navbar = ({
     >
       <nav
         ref={navRef}
-        className="rounded-3xl shadow-2xl backdrop-blur-xl border border-white/20 overflow-visible shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+        className="rounded-3xl shadow-2xl backdrop-blur-xl border border-white/20 overflow-visible"
         style={{ backgroundColor: baseColor + "80" }}
       >
         {/* ---------------- TOP BAR ---------------- */}
-        <div className={`${isScrolled ? 'h-[55px]' : 'h-17.5'} flex items-center justify-between px-8 relative transition-all duration-300`}>
+        <div className={`${isScrolled ? 'h-13.75' : 'h-17.5'} flex items-center justify-between px-8 relative transition-all duration-300`}>
           <div
             className={`${isScrolled ? 'text-xl' : 'text-2xl'} font-black italic text-white cursor-pointer transition-all duration-300`}
             onClick={() => handleNavigate("/")}
@@ -145,7 +145,7 @@ const Navbar = ({
                   {isServicesOpen && (
                     <div
                       ref={dropdownRef}
-                      className="absolute top-full left-0 mt-3 rounded-2xl shadow-2xl border border-white/20 min-w-[180px] z-[10000] backdrop-blur-xl"
+                      className="absolute top-full left-0 mt-3 rounded-2xl shadow-2xl border border-white/20 min-w-45 z-10000 backdrop-blur-xl"
                       style={{
                         backgroundColor: baseColor + "80",
                         pointerEvents: "auto",

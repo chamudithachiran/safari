@@ -28,14 +28,11 @@ const CampSection = () => {
             <img
               src={tentImg}
               alt="Luxury Bush Camp"
-              className="w-full h-[300px] sm:h-[350px] md:h-[450px] lg:h-[550px] object-cover"
+              className="w-full h-75 sm:h-87.5 md:h-112.5 lg:h-137.5 object-cover"
             />
           </div>
 
-          {/* PRICE BADGE */}
-          <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 bg-black/90 backdrop-blur-md text-[#FFC107] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl md:rounded-2xl font-black text-xs sm:text-sm shadow-xl">
-            From $350 / Night
-          </div>
+          
         </motion.div>
 
         {/* RIGHT CONTENT */}
@@ -67,7 +64,7 @@ const CampSection = () => {
                 key={idx}
                 className="flex items-start gap-3 text-zinc-500 font-medium text-xs sm:text-sm"
               >
-                <CheckCircle2 size={16} className="sm:w-[18px] sm:h-[18px] text-[#FFC107] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={16} className="sm:w-4.5 sm:h-4.5 text-[#FFC107] shrink-0 mt-0.5" />
                 <span>{feature}</span>
               </li>
             ))}

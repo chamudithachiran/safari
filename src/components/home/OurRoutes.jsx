@@ -8,14 +8,14 @@ const OurRoutes = () => {
   const routesData = [
     {
       id: 1,
-      title: "Minneriya",
+      title: "Minneriya National Park",
       description: "Famous for the massive gathering of wild elephants around the ancient Minneriya tank.",
       image: minneriyaImg,
       mapUrl: "https://maps.app.goo.gl/YK4TTBZSAGxLQtBi9?g_st=aw"
     },
     {
       id: 2,
-      title: "Kaudulla",
+      title: "Kaudulla National Park",
       description: "A stunning national park featuring lush grasslands and a central reservoir full of wildlife.",
       image: kaudullaImg,
       mapUrl: "https://maps.app.goo.gl/w7LQxTwBtFQJWRsV9?g_st=aw"
@@ -90,14 +90,14 @@ const OurRoutes = () => {
                 {/* Image */}
                 <motion.div className="h-60 sm:h-64 md:h-72 overflow-hidden relative" variants={cardFloat} animate="animate">
                   <img src={route.image} alt={route.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
                   {!isTouch && <div className="absolute inset-0 pointer-events-none transition-all duration-100" style={getShineStyle()}></div>}
                 </motion.div>
 
                 {/* Text */}
                 <div className="p-6 sm:p-8 md:p-10 text-center">
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4">{route.title}</h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 sm:mb-8 min-h-[60px] sm:min-h-[64px]">{route.description}</p>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 sm:mb-8 min-h-15 sm:min-h-16">{route.description}</p>
 
                   {/* Button */}
                   <motion.button

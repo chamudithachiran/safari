@@ -10,6 +10,7 @@ import {
   Instagram,
   ArrowRight
 } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa'; // TikTok icon
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -23,15 +24,23 @@ const Footer = () => {
     { label: 'Contact', path: '/contact' }
   ];
 
-  // ✅ FIXED ROUTES
   const servicesItems = [
-    { label: 'Safari Jeep', path: '/services' }, // ServicesPage.jsx
-    { label: 'Taxi Service', path: '/taxi' }     // TaxiPage.jsx
+    { label: 'Safari Jeep', path: '/services' },
+    { label: 'Taxi Service', path: '/taxi' }
+  ];
+
+  // Social media links
+  const socialLinks = [
+    { Icon: Facebook, url: 'https://www.facebook.com/share/1P6yw4Q8P6/?mibextid=wwXIfr' },
+    { Icon: MessageCircle, url: 'https://wa.me/94717402688' },
+    { Icon: Instagram, url: 'https://www.instagram.com/safartalesbypodi?igsh=OW8zNWdzcDQ3Mmhx&utm_source=qr' },
+    { Icon: FaTiktok, url: 'https://www.tiktok.com/@podi31_1686?_r=1&_t=ZS-92dHBzZvShp' }
   ];
 
   return (
     <footer className="bg-[#050505] text-zinc-400 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden border-t border-zinc-900">
 
+      {/* Background Text */}
       <div className="absolute -bottom-5 -right-5 pointer-events-none opacity-[0.03] select-none">
         <h1 className="text-[15vw] font-black italic uppercase text-white leading-none">
           WILD
@@ -58,7 +67,6 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 text-xs font-bold uppercase">
-
               {navigationItems.map(item => (
                 <li
                   key={item.label}
@@ -100,7 +108,6 @@ const Footer = () => {
                   </ul>
                 )}
               </li>
-
             </ul>
           </div>
 
@@ -121,12 +128,14 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Social Media Icons */}
         <div className="flex justify-center gap-4 border-t pt-8">
-          {[Facebook, MessageCircle, Instagram].map((Icon, i) => (
+          {socialLinks.map(({ Icon, url }, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -5 }}
               className="w-10 h-10 border flex items-center justify-center cursor-pointer"
+              onClick={() => window.open(url, '_blank')} // Open link in new tab
             >
               <Icon size={16} />
             </motion.div>

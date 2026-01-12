@@ -21,14 +21,12 @@ const ExpeditionDetail = () => {
             <img 
               src={elephantImg} 
               alt="Full Day Expedition Elephant" 
-              className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover" 
+              className="w-full h-75 sm:h-87.5 md:h-100 lg:h-112.5 object-cover" 
             />
           </div>
           
           {/* Pricing Badge */}
-          <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 bg-zinc-900/90 backdrop-blur-md text-[#FFC107] px-4 sm:px-6 py-2 sm:py-3 rounded-lg md:rounded-xl font-bold text-xs sm:text-sm shadow-2xl border border-zinc-800">
-            From $120 / Person
-          </div>
+         
         </motion.div>
 
         {/* RIGHT SIDE: CONTENT & FEATURES */}
@@ -67,7 +65,7 @@ const ExpeditionDetail = () => {
               "Visit to ancient ruins within the reserve"
             ].map((feature, i) => (
               <li key={i} className="flex items-start gap-3 sm:gap-4 text-zinc-700 font-semibold text-xs sm:text-sm uppercase tracking-tight">
-                <CheckCircle2 size={18} className="sm:w-5 sm:h-5 text-[#FFC107] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={18} className="sm:w-5 sm:h-5 text-[#FFC107] shrink-0 mt-0.5" />
                 <span>{feature}</span>
               </li>
             ))}

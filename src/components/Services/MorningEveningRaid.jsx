@@ -42,7 +42,7 @@ const MorningEveningRaid = () => {
                 key={idx}
                 className="flex items-start gap-3 text-zinc-500 font-medium text-xs sm:text-sm"
               >
-                <CheckCircle2 size={16} className="sm:w-[18px] sm:h-[18px] text-[#FFC107] flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={16} className="sm:w-4.5 sm:h-4.5 text-[#FFC107] shrink-0 mt-0.5" />
                 <span>{feature}</span>
               </li>
             ))}
@@ -66,13 +66,11 @@ const MorningEveningRaid = () => {
             <img
               src={leopardImg}
               alt="Leopard Resting"
-              className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] object-cover"
+              className="w-full h-75 sm:h-87.5 md:h-100 lg:h-125 object-cover"
             />
           </div>
 
-          <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 bg-black/80 backdrop-blur-md text-[#FFC107] px-4 sm:px-6 py-2 sm:py-3 rounded-lg md:rounded-xl font-black text-xs sm:text-sm shadow-xl">
-            From $75 / Person
-          </div>
+          
         </motion.div>
 
       </div>

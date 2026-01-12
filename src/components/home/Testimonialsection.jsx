@@ -1,45 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import bg1 from '../../assets/images/testi1.jpg';
-import bg2 from '../../assets/images/testi2.jpg';
-import bg3 from '../../assets/images/testi3.jpg';
+import bg1 from '../../assets/images/dnori.jpeg';
+import bg2 from '../../assets/images/ameliya.jpeg';
+import bg3 from '../../assets/images/james.jpeg';
+import bg4 from '../../assets/images/aboutus.jpg';
 
 const testimonials = [
   {
-    name: "Naïa. H",
+    name: "Dnori",
     role: "",
     bgImage: bg1,
-    quote: "we had a very good time with Yonuka today, he was super kind with us. We seen a lot of elephants and the price was very nice. We recommend Podi Safari !!"
+    quote: "We’ve just had an amazing Safari with Podi. He was super chilled and drove very safe and stopped for as much time to enjoy looking at the elephants as we wanted to.Very much recommended!Thanks a lot Podi! 🤗"
   },
   {
-    name: "Matt and Eb",
+    name: "Amelia Zielińska",
     role: "",
     bgImage: bg2,
-    quote: "He got us to the Eco Park and made a stop for us to get drinks. Within the park he was very informative and knowledgeable, spotting different wild life and navigating us to several herds of elephants within the jungle. He then dropped us back to our accomodation, and got us some fresh coconuts on the way as a treat. I highly recommend his friendly and knowledgeable service. Thanks - Matt and Eb"
+    quote: "We had this Safari organised by our resort, it was amazing. We visited Kaudulla National Park with them. Car is very comfy, the guys were really great. They put all the effort to show us all the elephants and other animals and we were lucky to spot around 70 elephants. We reccomend them very much!"
   },
   {
-    name: "Alejandro Hermoso",
+    name: "James Topal",
     role: "",
     bgImage: bg3,
-    quote: "We had this Safari organised by our resort, it was amazing. We visited Kaudulla National Park with them. Car is very comfy, the guys were really great. They put all the effort to show us all the elephants and other animals and we were lucky to spot around 70 elephants. We reccomend them very much!"
+    quote: "Great driver and told me a lot about the animals. The tour was great and I saw loads of elephants !"
   },
   // Duplicated cards
   {
-    name: "Olivis Amos",
+    name: "Dnori",
     role: "",
     bgImage: bg1,
-    quote: "Amazing afternoon spent with Yonuka, we saw so many elephants and had a great time, very professional, gentle and available for us. I would recomend it with no doubt."
+    quote: "We’ve just had an amazing Safari with Podi. He was super chilled and drove very safe and stopped for as much time to enjoy looking at the elephants as we wanted to.Very much recommended!Thanks a lot Podi! 🤗"
   },
   {
-    name: "Koen Hooijmaijers",
+    name: "Amelia Zielińska",
     role: "",
     bgImage: bg2,
-    quote: "We had a fantastic safari today. The guide helped us find the best spots to see the elephants. Fantastic!"
+    quote: "We had this Safari organised by our resort, it was amazing. We visited Kaudulla National Park with them. Car is very comfy, the guys were really great. They put all the effort to show us all the elephants and other animals and we were lucky to spot around 70 elephants. We reccomend them very much!"
   },
   {
-    name: "pascale van zuijlen",
+    name: "Alexandra Elena Anton",
     role: "",
-    bgImage: bg3,
-    quote: "Podi gave us a great tour of Minneriya yesterday. We saw so many elephants up close several times, thanks in part to his patience. He knows and shares a lot about the animals, and he's very friendly. Highly recommended!"
+    bgImage: bg4,
+    quote: "The driver was very nice and had a respectful approach towards the animals encountered. We felt safe the entire time and were able to enjoy the experience to the fullest. Highly recommended!"
   }
 ];
 
@@ -112,7 +113,7 @@ const Testimonialsection = () => {
               >
                 {/* BACKGROUND IMAGE */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                  className="absolute inset-0 bg-cover bg-center duration-300 group-hover:scale-110"
                   style={{ backgroundImage: `url(${item.bgImage})` }}
                 />
 

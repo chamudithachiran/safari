@@ -35,7 +35,7 @@ const Services = () => {
                 </div>
               </div>
               {item !== 5 && (
-                <div className="w-px h-8 md:h-10 bg-gradient-to-b from-yellow-500/50 to-transparent"></div>
+                <div className="w-px h-8 md:h-10 bg-linear-to-b from-yellow-500/50 to-transparent"></div>
               )}
             </div>
           ))}
@@ -65,7 +65,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 relative z-10">
 
             {/* CARD 1 */}
-            <div className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 min-h-[300px] md:h-75 flex flex-col justify-end">
+            <div className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 min-h-75 md:h-75 flex flex-col justify-end">
               <img src={geepImg} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700" alt="Jeep Safari" />
               <div className="relative z-10">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center mb-3 md:mb-4 border border-yellow-500/30">
@@ -85,26 +85,32 @@ const Services = () => {
             </div>
 
             {/* CARD 2 */}
-            <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 min-h-[250px] md:min-h-[300px] flex flex-col justify-center items-center text-center">
+            <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 min-h-62.5 md:min-h-75 flex flex-col justify-center items-center text-center">
               <img src={photographyImg} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700" alt="Photography" />
               <div className="relative z-10">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/20 flex items-center justify-center mb-3 md:mb-4">
                   <Camera className="text-yellow-500 w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold mb-2">Photography</h3>
-                <p className="text-[9px] sm:text-[10px] text-gray-400">Capture the majestic moments of the jungle.</p>
+                <p className="text-[9px] sm:text-[10px] text-gray-400">Capture the majestic moments of the jungle.</p><br/>
+                <button 
+                  onClick={() => navigate('/gallery')}
+                  className="bg-yellow-500 text-black text-[9px] sm:text-[10px] font-bold px-3 md:px-4 py-1.5 md:py-2 rounded-lg uppercase tracking-widest hover:bg-yellow-400 transition"
+                >
+                  Explore More
+                </button>
               </div>
             </div>
 
             {/* CARD 3 */}
-            <div className="rounded-2xl md:rounded-3xl border border-white/10 overflow-hidden min-h-[250px] md:h-75">
+            <div className="rounded-2xl md:rounded-3xl border border-white/10 overflow-hidden min-h-62.5 md:h-75">
               <img src={testiImg} className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" alt="Testimonial" />
             </div>
 
             {/* CARD 4 */}
-            <div className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 md:p-8 min-h-[300px] md:h-75 flex flex-col justify-end">
+            <div className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 md:p-8 min-h-75 md:h-75 flex flex-col justify-end">
               <img src={campingImg} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700" alt="Camping" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black to-transparent"></div>
               <div className="relative z-10">
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-3 md:mb-4">
                   <Car className="text-yellow-500 w-5 h-5" />
