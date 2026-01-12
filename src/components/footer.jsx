@@ -29,6 +29,14 @@ const CreativeFooter = () => {
     { label: 'Taxi Service', path: '/taxi' }     // TaxiPage.jsx
   ];
 
+  // ✅ FIX: define socialLinks
+  const socialLinks = [
+    { icon: Facebook, url: 'https://www.facebook.com/share/1P6yw4Q8P6/?mibextid=wwXIfr' },
+    { icon: MessageCircle, url: 'https://wa.me/94717402688' },
+    { icon: Instagram, url: 'https://www.instagram.com/safartalesbypodi?igsh=OW8zNWdzcDQ3Mmhx&utm_source=qr' },
+    { icon: FaTiktok, url: 'https://www.tiktok.com/@podi31_1686?_r=1&_t=ZS-92dHBzZvShp' }
+  ];
+
   return (
     <footer className="bg-[#050505] text-zinc-400 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden border-t border-zinc-900">
 
@@ -156,17 +164,7 @@ const CreativeFooter = () => {
           </div>
         </div>
 
-        <div className="flex justify-center gap-4 border-t pt-8">
-          {[Facebook, MessageCircle, Instagram].map((Icon, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -5 }}
-              className="w-10 h-10 border flex items-center justify-center cursor-pointer"
-            >
-              <Icon size={16} />
-            </motion.div>
-          ))}
-        </div>
+        
       </div>
     </footer>
   );
