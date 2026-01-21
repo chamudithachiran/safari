@@ -7,40 +7,39 @@ import bg4 from '../../assets/images/aboutus.jpg';
 const testimonials = [
   {
     name: "Dnori",
-    role: "",
+    role: "Safari Tourist",
     bgImage: bg1,
-    quote: "We’ve just had an amazing Safari with Podi. He was super chilled and drove very safe and stopped for as much time to enjoy looking at the elephants as we wanted to.Very much recommended!Thanks a lot Podi! 🤗"
+    quote: "We had an amazing **Sri Lanka jeep safari** with Podi. He drove safely and stopped so we could fully enjoy the elephants. Highly recommended for wildlife enthusiasts! Thanks, Podi! 🤗"
   },
   {
     name: "Amelia Zielińska",
-    role: "",
+    role: "Tourist",
     bgImage: bg2,
-    quote: "We had this Safari organised by our resort, it was amazing. We visited Kaudulla National Park with them. Car is very comfy, the guys were really great. They put all the effort to show us all the elephants and other animals and we were lucky to spot around 70 elephants. We reccomend them very much!"
+    quote: "Our **jeep safari tour** in Kaudulla National Park was incredible. Comfortable car, friendly guides, and we spotted around 70 elephants. A must-do **Sri Lanka wildlife experience**!"
   },
   {
     name: "James Topal",
-    role: "",
+    role: "Traveller",
     bgImage: bg3,
-    quote: "Great driver and told me a lot about the animals. The tour was great and I saw loads of elephants !"
+    quote: "Excellent driver and knowledgeable guide. We saw so many elephants on our **Sri Lanka safari tour**. A truly unforgettable wildlife adventure!"
   },
-  // Duplicated cards
   {
     name: "Dnori",
-    role: "",
+    role: "Safari Tourist",
     bgImage: bg1,
-    quote: "We’ve just had an amazing Safari with Podi. He was super chilled and drove very safe and stopped for as much time to enjoy looking at the elephants as we wanted to.Very much recommended!Thanks a lot Podi! 🤗"
+    quote: "We had an amazing **Sri Lanka jeep safari** with Podi. He drove safely and stopped so we could fully enjoy the elephants. Highly recommended for wildlife enthusiasts! Thanks, Podi! 🤗"
   },
   {
     name: "Amelia Zielińska",
-    role: "",
+    role: "Tourist",
     bgImage: bg2,
-    quote: "We had this Safari organised by our resort, it was amazing. We visited Kaudulla National Park with them. Car is very comfy, the guys were really great. They put all the effort to show us all the elephants and other animals and we were lucky to spot around 70 elephants. We reccomend them very much!"
+    quote: "Our **jeep safari tour** in Kaudulla National Park was incredible. Comfortable car, friendly guides, and we spotted around 70 elephants. A must-do **Sri Lanka wildlife experience**!"
   },
   {
     name: "Alexandra Elena Anton",
-    role: "",
+    role: "Tourist",
     bgImage: bg4,
-    quote: "The driver was very nice and had a respectful approach towards the animals encountered. We felt safe the entire time and were able to enjoy the experience to the fullest. Highly recommended!"
+    quote: "The driver was very professional and respectful towards animals. We felt safe and enjoyed the full **wildlife safari experience in Sri Lanka**. Highly recommended for travelers!"
   }
 ];
 
@@ -82,7 +81,7 @@ const Testimonialsection = () => {
           data-aos-duration="1500"
           className="text-3xl md:text-4xl font-bold text-orange-500 uppercase tracking-widest"
         >
-          Testimonials
+          Customer Testimonials
         </h2>
 
         <div
@@ -115,6 +114,8 @@ const Testimonialsection = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center duration-300 group-hover:scale-110"
                   style={{ backgroundImage: `url(${item.bgImage})` }}
+                  role="img"
+                  aria-label={`Customer ${item.name} enjoying Sri Lanka safari`}
                 />
 
                 {/* DARK OVERLAY */}

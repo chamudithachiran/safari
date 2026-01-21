@@ -7,30 +7,29 @@ const ServicesSection = () => {
   const services = [
     {
       icon: <Car className="w-full h-full" />,
-      title: "PREMIUM FLEET",
-      desc: "Luxury 4x4 jeeps equipped for rugged terrain without compromising comfort."
+      title: "PREMIUM SAFARI JEEPS",
+      desc: "Rent luxury 4x4 safari jeeps in Sri Lanka, equipped for rugged terrain while ensuring comfort for your wildlife adventures."
     },
     {
       icon: <Compass className="w-full h-full" />,
-      title: "EXPERT GUIDES",
-      desc: "Certified naturalists with deep knowledge of local wildlife behavior."
+      title: "PROFESSIONAL SAFARI GUIDES",
+      desc: "Certified naturalists and local experts provide guided safari tours with deep knowledge of Sri Lanka's wildlife and ecosystems."
     },
     {
       icon: <Camera className="w-full h-full" />,
-      title: "PHOTO TOURS",
-      desc: "Specialized positioning and timing for the perfect wildlife shot."
+      title: "WILDLIFE PHOTO TOURS",
+      desc: "Capture the perfect wildlife moments on our specialized photo safari tours, guided by experienced nature photographers."
     }
   ];
 
   return (
-    // 🔥 Pull section up to cancel parent padding
     <section className="relative w-full -mt-24 min-h-screen flex items-center overflow-hidden bg-black">
       
       {/* BACKGROUND */}
       <div className="absolute inset-0 z-0">
         <img
           src={sectionBg}
-          alt="Safari Background"
+          alt="Luxury safari jeep in Sri Lanka"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70" />

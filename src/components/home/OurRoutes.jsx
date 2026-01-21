@@ -9,21 +9,21 @@ const OurRoutes = () => {
     {
       id: 1,
       title: "Minneriya National Park",
-      description: "Famous for the massive gathering of wild elephants around the ancient Minneriya tank.",
+      description: "Experience the iconic **Sri Lanka jeep safari** at Minneriya National Park, famous for the massive gathering of wild elephants around the ancient Minneriya tank.",
       image: minneriyaImg,
       mapUrl: "https://maps.app.goo.gl/YK4TTBZSAGxLQtBi9?g_st=aw"
     },
     {
       id: 2,
       title: "Kaudulla National Park",
-      description: "A stunning national park featuring lush grasslands and a central reservoir full of wildlife.",
+      description: "Enjoy a scenic **wildlife safari tour** in Kaudulla National Park, featuring lush grasslands and a central reservoir full of diverse wildlife including elephants and exotic birds.",
       image: kaudullaImg,
       mapUrl: "https://maps.app.goo.gl/w7LQxTwBtFQJWRsV9?g_st=aw"
     },
     {
       id: 3,
       title: "Hurulu Eco Park",
-      description: "A vital eco-system for elephants and diverse bird species in the heart of the dry zone.",
+      description: "Discover Hurulu Eco Park, a vital eco-system in Sri Lanka’s dry zone, home to elephants and rare bird species. Perfect for a **Sri Lanka safari adventure**.",
       image: huruluImg,
       mapUrl: "https://maps.app.goo.gl/xL9gySc7xeJhimFH8?g_st=aw"
     }
@@ -69,7 +69,7 @@ const OurRoutes = () => {
             <span className="block text-[#FFC107]">ROUTES</span>
           </motion.h2>
           <motion.p className="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl" variants={fadeUp}>
-            Discover our most popular travel destinations and scenic paths.
+            Explore our most popular **Sri Lanka safari routes** and wildlife destinations. Perfect for **jeep safari tours** and **tourist vehicle rentals**.
           </motion.p>
         </motion.div>
 
@@ -89,7 +89,7 @@ const OurRoutes = () => {
               >
                 {/* Image */}
                 <motion.div className="h-60 sm:h-64 md:h-72 overflow-hidden relative" variants={cardFloat} animate="animate">
-                  <img src={route.image} alt={route.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <img src={route.image} alt={`Safari route: ${route.title} in Sri Lanka`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
                   {!isTouch && <div className="absolute inset-0 pointer-events-none transition-all duration-100" style={getShineStyle()}></div>}
                 </motion.div>
@@ -104,6 +104,7 @@ const OurRoutes = () => {
                     className="bg-[#FFC107] text-black font-bold py-2.5 sm:py-3.5 px-8 sm:px-12 rounded-full transition-all duration-300 shadow-lg"
                     {...buttonHover}
                     onClick={() => openMap(route.mapUrl)}
+                    aria-label={`View ${route.title} safari route map`}
                   >
                     View Route
                   </motion.button>

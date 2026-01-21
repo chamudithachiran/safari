@@ -67,7 +67,7 @@ const AboutUs = () => {
               </h1>
 
               <p className="text-[10px] sm:text-xs tracking-widest text-yellow-500 font-bold uppercase">
-                Passion for the untamed
+                Passion for the Untamed
               </p>
             </header>
 
@@ -77,7 +77,7 @@ const AboutUs = () => {
               className="space-y-4 md:space-y-6 text-xs sm:text-sm text-gray-400 leading-relaxed max-w-md"
             >
               <p>
-                The journey through is to bring nature's wilderness. Committing to the passion for majestic landscapes and spectacular wildlife, capturing the essence of the wild.
+                At <strong>Safari Tales by Podi</strong>, we are dedicated to providing unforgettable <strong>Sri Lanka jeep safari experiences</strong>. Our passion for exploring the wild brings you face-to-face with majestic landscapes, exotic wildlife, and the heart of nature. Whether it’s a thrilling <strong>wildlife safari</strong>, a family adventure, or a serene journey through Sri Lanka’s national parks, our <strong>jeep tours in Sri Lanka</strong> capture the true essence of the untamed wilderness. Join us for an authentic <strong>Sri Lanka safari adventure</strong> and experience nature like never before.
               </p>
             </div>
 

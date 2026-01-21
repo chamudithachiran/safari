@@ -11,9 +11,9 @@ import campfireArticle from '../../assets/images/night-campfire.jpg';
 
 const DetailsSection = () => {
   const latestArticles = [
-    { title: "Photographing the Big Five", excerpt: "Capture the perfect wildlife shot", date: "MAY 8, 2024", image: leopardArticle },
-    { title: "Luxury Lodges of Africa", excerpt: "Explore the most exclusive retreats", date: "MAY 3, 2024", image: lodgeArticle },
-    { title: "Night Under the Stars", excerpt: "Experience the magic of the bush by night", date: "APRIL 25, 2024", image: campfireArticle },
+    { title: "Photographing the Big Five in Sri Lanka", excerpt: "Tips to capture stunning wildlife photography", date: "MAY 8, 2024", image: leopardArticle },
+    { title: "Luxury Safari Lodges in Sri Lanka", excerpt: "Discover the most exclusive lodges and retreats", date: "MAY 3, 2024", image: lodgeArticle },
+    { title: "Overnight Bush Camp Adventures", excerpt: "Experience the thrill of sleeping under the stars on a safari", date: "APRIL 25, 2024", image: campfireArticle },
   ];
 
   // Variants
@@ -61,7 +61,7 @@ const DetailsSection = () => {
               className="text-3xl font-black italic uppercase tracking-tighter"
               style={{ fontFamily: "'Permanent Marker', cursive" }}
             >
-              Featured Post
+              Featured Safari Guide
             </motion.h2>
 
             <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="group cursor-pointer">
@@ -72,7 +72,7 @@ const DetailsSection = () => {
               >
                 <motion.img
                   src={featuredImg}
-                  alt="Safari Hiker"
+                  alt="Hiking Safari Adventure in Sri Lanka"
                   className="w-full h-150 md:h-150 object-cover"
                   whileHover={{ scale: 1.08, rotate: 0.5 }}
                   transition={{ type: "spring", stiffness: 120, damping: 12 }}
@@ -84,10 +84,10 @@ const DetailsSection = () => {
 
               {/* Title & Description */}
               <motion.h3 variants={item} className="text-4xl md:text-5xl font-black mb-4">
-                Top 10 Tips for an Epic Safari Adventure
+                Top 10 Tips for an Epic Safari Adventure in Sri Lanka
               </motion.h3>
               <motion.p variants={item} className="text-zinc-400 text-lg mb-8 max-w-2xl">
-                Get expert advice to make your safari unforgettable. From packing essentials to wildlife behavior.
+                Get expert advice to make your Sri Lanka safari unforgettable. Learn about packing essentials, wildlife spotting, and photography tips.
               </motion.p>
 
               {/* Button */}
@@ -101,7 +101,7 @@ const DetailsSection = () => {
             </motion.div>
           </div>
 
-          {/* RIGHT: LATEST ARTICLES */}
+          {/* RIGHT: LATEST Articles */}
           <div className="space-y-8">
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
@@ -110,7 +110,7 @@ const DetailsSection = () => {
               className="text-3xl font-black italic uppercase tracking-tighter border-b border-white/10 pb-4"
               style={{ fontFamily: "'Permanent Marker', cursive" }}
             >
-              Latest Articles
+              Latest Safari Articles
             </motion.h2>
 
             <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-10">
@@ -124,7 +124,7 @@ const DetailsSection = () => {
                   <motion.div className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 border border-white/10">
                     <motion.img
                       src={article.image}
-                      alt={article.title}
+                      alt={`${article.title} | Safari Tales by Podi`}
                       className="w-full h-full object-cover"
                       whileHover={{ scale: 1.1, rotate: -1 }}
                       transition={{ type: "spring", stiffness: 120, damping: 12 }}
@@ -148,10 +148,10 @@ const DetailsSection = () => {
         {/* NEWSLETTER SECTION */}
         <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center space-y-8 py-20 border-t border-white/10">
           <motion.h2 variants={item} className="text-5xl md:text-7xl font-black italic uppercase" style={{ fontFamily: "'Permanent Marker', cursive" }}>
-            Subscribe to Our Newsletter
+            Subscribe to Our Safari Newsletter
           </motion.h2>
           <motion.p variants={item} className="text-zinc-400 text-lg md:text-xl tracking-wide">
-            Stay updated with the latest news & travel updates
+            Get the latest safari tips, wildlife photography guides, and luxury lodge updates from Sri Lanka.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col md:flex-row justify-center items-center gap-4 max-w-2xl mx-auto mt-10">

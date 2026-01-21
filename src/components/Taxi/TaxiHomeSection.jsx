@@ -63,10 +63,26 @@ const cardVariant = {
 
 const TaxiHomeSection = () => {
   const taxiServices = [
-    { icon: <Car size={24} />, title: "PREMIUM FLEET", desc: "Luxury sedans maintained to the highest standards for your comfort." },
-    { icon: <ShieldCheck size={24} />, title: "SAFETY FIRST", desc: "Highly trained drivers ensuring a secure and smooth ride." },
-    { icon: <Users size={24} />, title: "PROFESSIONAL DRIVERS", desc: "Licensed professionals dedicated to safe and timely arrivals." },
-    { icon: <Star size={24} />, title: "LUXURY & COMFORT", desc: "Premium interiors and amenities for a first-class travel experience." }
+    { 
+      icon: <Car size={24} />, 
+      title: "PREMIUM FLEET", 
+      desc: "Luxury sedans and SUVs for airport taxi transfers, city rides, and safari tours in Sri Lanka." 
+    },
+    { 
+      icon: <ShieldCheck size={24} />, 
+      title: "SAFETY FIRST", 
+      desc: "Highly trained drivers ensuring secure, comfortable, and timely rides for tourists and locals." 
+    },
+    { 
+      icon: <Users size={24} />, 
+      title: "PROFESSIONAL DRIVERS", 
+      desc: "Licensed chauffeurs with local knowledge providing smooth journeys across Sri Lanka." 
+    },
+    { 
+      icon: <Star size={24} />, 
+      title: "LUXURY & COMFORT", 
+      desc: "Premium interiors and amenities for first-class travel on city tours, airport transfers, or safari excursions." 
+    }
   ];
 
   return (
@@ -83,7 +99,7 @@ const TaxiHomeSection = () => {
           variants={bgFloat}
           animate="animate"
           src={taxiBg}
-          alt="City Taxi"
+          alt="City Taxi Service in Sri Lanka for airport and safari tours"
           className="w-full h-full object-cover brightness-75"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
@@ -107,7 +123,7 @@ const TaxiHomeSection = () => {
             style={{ fontFamily: "'Permanent Marker', cursive" }}
           >
             <motion.span variants={titleBreath} animate="animate">
-              YOUR CITY'S <span className="text-[#FFC107]">BEST TAXI</span>
+              YOUR CITY'S <span className="text-[#FFC107]">BEST TAXI SERVICE</span> IN SRI LANKA
             </motion.span>
           </motion.h1>
 
@@ -115,7 +131,7 @@ const TaxiHomeSection = () => {
             variants={textItem}
             className="text-white text-xl md:text-2xl font-medium mt-4 tracking-wide drop-shadow-md"
           >
-            Premium rides, anytime, anywhere.
+            Book premium taxi rides for airport transfers, city tours, or safari transport anywhere in Sri Lanka.
           </motion.p>
         </motion.div>
 

@@ -9,7 +9,6 @@ const ImpactSection = () => {
       const section = document.getElementById('impact-section');
       if (section) {
         const rect = section.getBoundingClientRect();
-        // Trigger when the section is 30% visible
         if (rect.top < window.innerHeight * 0.7) {
           setIsVisible(true);
         }
@@ -26,7 +25,7 @@ const ImpactSection = () => {
       id="impact-section" 
       className="relative bg-[#0A0A0A] py-32 px-6 md:px-20 overflow-hidden text-white"
     >
-      {/* Dynamic Grid Pattern - Subtle move on scroll */}
+      {/* Dynamic Grid Pattern */}
       <div 
         className="absolute inset-0 opacity-20 transition-opacity duration-1000"
         style={{ 
@@ -54,14 +53,22 @@ const ImpactSection = () => {
           </h2>
 
           <p className="text-zinc-400 text-xl mb-12 leading-relaxed max-w-lg font-medium">
-            Sustainable tourism isn't a buzzword for us; it's our survival. We donate 
-            <span className="text-white"> 5% of our annual profits</span> to the 'Wild Sri Lanka Foundation'.
+            At **Safari Tales by Podi**, sustainable tourism is at the heart of every journey. We donate 
+            <span className="text-white"> 5% of our annual profits</span> to the <strong>'Wild Sri Lanka Foundation'</strong>, supporting **wildlife conservation in Sri Lanka** and ensuring our **eco-friendly safari tours** benefit both nature and local communities.
           </p>
 
           <div className="space-y-10 mb-14">
-            {[
-              { title: "Plastic-Free Safaris", desc: "We banned single-use plastics in our jeeps back in 2015.", delay: "delay-100" },
-              { title: "Reforestation Projects", desc: "Planted over 5,000 indigenous trees in buffer zones.", delay: "delay-300" }
+            {[ 
+              { 
+                title: "Plastic-Free Safaris", 
+                desc: "All safari vehicles are fully plastic-free, promoting eco-friendly travel since 2015.", 
+                delay: "delay-100" 
+              },
+              { 
+                title: "Reforestation Projects", 
+                desc: "Over 5,000 indigenous trees planted to restore wildlife habitats in buffer zones.", 
+                delay: "delay-300" 
+              }
             ].map((item, i) => (
               <div key={i} className={`flex items-start gap-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${item.delay}`}>
                 <div className="bg-[#FFC107]/10 p-2 rounded-full">
@@ -74,19 +81,17 @@ const ImpactSection = () => {
               </div>
             ))}
           </div>
-
-
         </div>
 
         {/* Right Overlapping Images Column */}
         <div className="relative h-150 flex items-center justify-center group">
           
-          {/* Background Frame - Rotates and scales */}
+          {/* Background Frame */}
           <div className={`absolute inset-0 border border-zinc-800 transition-all duration-1000 transform ${
             isVisible ? 'rotate-3 scale-100' : 'rotate-0 scale-90'
           } group-hover:-rotate-3 rounded-sm opacity-50`}></div>
 
-          {/* 1. Top Image (Jeep) */}
+          {/* Jeep Image */}
           <div className={`absolute left-0 top-12 w-3/4 z-20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] transition-all duration-1000 ease-out transform ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
           } group-hover:-translate-y-6 group-hover:-translate-x-4`}>
@@ -94,12 +99,12 @@ const ImpactSection = () => {
                 <img 
                   src="../../src/assets/images/jeep-bw.jpg" 
                   className="grayscale group-hover:grayscale-0 w-full h-auto object-cover transition-all duration-1000 ease-in-out scale-100 group-hover:scale-105"
-                  alt="Jeep"
+                  alt="Eco-friendly safari jeep for Sri Lanka wildlife tours"
                 />
               </div>
           </div>
 
-          {/* 2. Bottom Image (Elephant) */}
+          {/* Elephant Image */}
           <div className={`absolute right-0 bottom-12 w-3/4 z-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] transition-all duration-1000 ease-out delay-200 transform ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
           } group-hover:translate-y-6 group-hover:translate-x-4`}>
@@ -107,7 +112,7 @@ const ImpactSection = () => {
                 <img 
                   src="../../src/assets/images/elephant-bw.jpg" 
                   className="grayscale group-hover:grayscale-0 w-full h-auto object-cover transition-all duration-1000 ease-in-out scale-100 group-hover:scale-105"
-                  alt="Elephant"
+                  alt="Elephant in Sri Lanka national park safari tour"
                 />
             </div>
           </div>

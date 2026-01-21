@@ -35,9 +35,9 @@ const badgePulse = {
 /* ---------------- Component ---------------- */
 const TaxiServiceSection = () => {
   const serviceFeatures = [
-    "Experienced chauffeurs",
-    "Flight tracking",
-    "Flat rates to airport"
+    "Experienced chauffeurs with local knowledge",
+    "Real-time flight tracking for timely pickups",
+    "Flat rates to all major airports and hotels"
   ];
 
   return (
@@ -65,13 +65,10 @@ const TaxiServiceSection = () => {
           >
             <img
               src={executiveCarImg}
-              alt="Executive Van Service"
+              alt="Executive van rental service for airport transfer and tourist safari in Sri Lanka"
               className="w-full h-100 md:h-125 object-cover"
             />
           </motion.div>
-
-          {/* PRICE BADGE */}
-          
         </motion.div>
 
         {/* RIGHT SIDE: CONTENT */}
@@ -92,8 +89,7 @@ const TaxiServiceSection = () => {
             </h3>
 
             <p className="text-zinc-200 text-lg leading-relaxed max-w-lg mt-6">
-              Experience unparalleled luxury with our executive airport fleet.
-              Perfect for business travel, night runs, or premium city rides.
+              Enjoy luxury private transfers with Safari Tales by Podi. Our executive van rental in Sri Lanka is perfect for airport pickups, city tours, or transferring tourists to safari destinations in comfort. Professional chauffeurs, spacious vehicles, and on-time service ensure a premium travel experience.
             </p>
           </motion.header>
 
@@ -122,7 +118,7 @@ const TaxiServiceSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-14 py-4 border-2 border-[#FFC107] text-[#FFC107] font-black uppercase tracking-widest text-xs hover:bg-[#FFC107] hover:text-black transition-all rounded-lg shadow-md"
               >
-                BOOK NOW
+                BOOK YOUR PRIVATE VAN
               </motion.button>
             </Link>
           </motion.div>
@@ -134,3 +130,4 @@ const TaxiServiceSection = () => {
 };
 
 export default TaxiServiceSection;
+s

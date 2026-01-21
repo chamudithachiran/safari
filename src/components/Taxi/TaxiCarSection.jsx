@@ -52,9 +52,9 @@ const badgePulse = {
 
 const TaxiCarSection = () => {
   const serviceFeatures = [
-    "Experienced chauffeurs",
-    "Flight tracking",
-    "Flat rates to airport"
+    "Experienced chauffeurs with local knowledge",
+    "Real-time flight tracking for timely airport pickup",
+    "Flat rates to major airports and hotels in Sri Lanka"
   ];
 
   return (
@@ -85,8 +85,7 @@ const TaxiCarSection = () => {
             </h3>
 
             <p className="text-zinc-200 text-lg leading-relaxed max-w-lg mt-6">
-              Experience unparalleled luxury with our executive airport fleet.
-              Perfect for business travel, night runs, or premium city rides.
+              Safari Tales by Podi offers Sri Lanka executive car service for luxury private transfers. Ideal for airport pickups, city tours, business travel, or safari excursions. Enjoy punctual, safe, and comfortable travel with professional chauffeurs and premium vehicles.
             </p>
           </motion.header>
 
@@ -113,7 +112,7 @@ const TaxiCarSection = () => {
                 transition={{ type: "spring", stiffness: 220 }}
                 className="px-14 py-4 border-2 border-[#FFC107] text-[#FFC107] font-black uppercase tracking-widest text-xs hover:bg-[#FFC107] hover:text-black transition-all rounded-lg shadow-md"
               >
-                BOOK NOW
+                BOOK YOUR EXECUTIVE CAR
               </motion.button>
             </Link>
           </motion.div>
@@ -135,13 +134,10 @@ const TaxiCarSection = () => {
           >
             <img
               src={executiveCarImg}
-              alt="Executive Car Service"
+              alt="Executive car rental for luxury airport transfer and safari tours in Sri Lanka"
               className="w-full h-100 md:h-125 object-cover"
             />
           </motion.div>
-
-          {/* PRICE BADGE */}
-          
         </motion.div>
 
       </div>

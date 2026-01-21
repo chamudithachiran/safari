@@ -23,20 +23,18 @@ const MorningEveningRaid = () => {
             style={{ fontFamily: "'Permanent Marker', cursive" }}
           >
             MORNING OR EVENING <br />
-            <span className="text-zinc-400">RAID</span>
+            <span className="text-zinc-400">WILDLIFE SAFARI</span>
           </h3>
 
           <p className="text-zinc-500 text-base sm:text-lg leading-relaxed mb-6 md:mb-10 max-w-lg">
-            Short on time? Choose between the golden hour of sunrise or the dramatic
-            lighting of sunset. These 4-hour drives are perfect for capturing
-            stunning photography and witnessing peak animal activity periods.
+            Short on time? Enjoy a flexible Sri Lanka morning safari or evening safari with Safari Tales by Podi. These 4-hour wildlife jeep tours take you during sunrise or sunset, providing the best opportunities for spotting leopards, elephants, and exotic birds in their natural jungle habitat. Perfect for wildlife enthusiasts and jungle photography tours.
           </p>
 
           <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10 md:mb-12">
             {[
-              "Choice of 5:00 AM or 2:00 PM start",
-              "Refreshments provided",
-              "Hotel pickup and drop-off included"
+              "Choice of 5:00 AM morning safari or 2:00 PM evening safari",
+              "Refreshments provided during your wildlife tour",
+              "Convenient hotel pickup and drop-off included"
             ].map((feature, idx) => (
               <li
                 key={idx}
@@ -50,7 +48,7 @@ const MorningEveningRaid = () => {
 
           <Link to="/contact">
             <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 border-2 border-zinc-900 text-zinc-900 font-black uppercase tracking-widest text-[10px] sm:text-xs hover:bg-zinc-900 hover:text-white transition-all rounded-lg shadow-md">
-              BOOK NOW
+              BOOK YOUR SAFARI NOW
             </button>
           </Link>
         </div>
@@ -65,12 +63,10 @@ const MorningEveningRaid = () => {
           <div className="rounded-2xl md:rounded-[30px] overflow-hidden shadow-2xl">
             <img
               src={leopardImg}
-              alt="Leopard Resting"
+              alt="Leopard spotted during Sri Lanka morning and evening safari"
               className="w-full h-75 sm:h-87.5 md:h-100 lg:h-125 object-cover"
             />
           </div>
-
-          
         </motion.div>
 
       </div>

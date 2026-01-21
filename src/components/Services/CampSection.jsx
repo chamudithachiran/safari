@@ -8,9 +8,9 @@ import tentImg from "../../assets/images/bush-camp-tent.jpg";
 
 const CampSection = () => {
   const features = [
-    "Full board luxury tented accommodation",
-    "Night walk with infrared equipment",
-    "Private chef and butler service"
+    "Full board luxury tented accommodation in the heart of the jungle",
+    "Night walk with infrared equipment for wildlife spotting",
+    "Private chef and butler service for a bespoke safari experience"
   ];
 
   return (
@@ -27,12 +27,10 @@ const CampSection = () => {
           <div className="rounded-2xl md:rounded-3xl lg:rounded-[40px] overflow-hidden shadow-2xl">
             <img
               src={tentImg}
-              alt="Luxury Bush Camp"
+              alt="Luxury bush camp tented accommodation for wildlife safari in Sri Lanka"
               className="w-full h-75 sm:h-87.5 md:h-112.5 lg:h-137.5 object-cover"
             />
           </div>
-
-          
         </motion.div>
 
         {/* RIGHT CONTENT */}
@@ -40,7 +38,7 @@ const CampSection = () => {
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="w-8 sm:w-12 h-1 bg-[#FFC107]" />
             <span className="text-[#FFC107] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-black text-[10px] sm:text-xs">
-              ULTIMATE EXPERIENCE
+              ULTIMATE SAFARI EXPERIENCE
             </span>
           </div>
 
@@ -49,12 +47,14 @@ const CampSection = () => {
             style={{ fontFamily: "'Permanent Marker', cursive" }}
           >
             OVERNIGHT <br />
-            <span className="text-zinc-400">BUSH CAMP</span>
+            <span className="text-zinc-400">LUXURY BUSH CAMP</span>
           </h3>
 
           <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-lg">
-            Sleep under a blanket of stars in the heart of the sanctuary. Our luxury
-            mobile camps offer the thrill of the wild with the comforts of a hotel.
+            Sleep under a blanket of stars in the heart of Sri Lanka’s wildlife sanctuary. 
+            Safari Tales by Podi offers luxury bush camp tents with all the comforts of a hotel, 
+            combining an authentic jungle camping experience with premium safari accommodation. 
+            Ideal for wildlife enthusiasts, couples, and families seeking a unique overnight safari experience.
           </p>
 
           {/* FEATURES */}
@@ -72,7 +72,7 @@ const CampSection = () => {
 
           <Link to="/contact">
             <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 border-2 border-zinc-900 text-zinc-900 font-black uppercase tracking-widest text-[10px] sm:text-xs hover:bg-zinc-900 hover:text-white transition-all rounded-lg shadow-md">
-              BOOK NOW
+              BOOK YOUR OVERNIGHT SAFARI
             </button>
           </Link>
         </div>
